@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">ePesantren Presensi</string>
+
+    <string name="empty">--</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Mmmmh, no</string>
+    <string name="error">Error</string>
+    <string name="permissionExplanation">Look, we really need your location because bla bla bla&#8230;</string>
+    <string name="switchOnLocationShort">Oops - you seem to have disabled location services at the moment. This app is
+        really cool and needs your location because bla bla bla. To continue, please click on "OK".</string>
+    <string name="switchOnLocationLong">Oops - you seem to have disabled location services at the moment. This app is
+        really cool and needs your location because bla bla bla. To continue, please click on "OK" and enable
+        location. If you\'re worried about battery usage, be sure to switch to energy saving mode. </string>
+    <string name="permissionPermanentlyDeclined">Bummer! You have permanently declined the location permission. But
+        this app is so cool and needs your location because&#8230; you know. Click "OK" to change the permission
+        settings.</string>
+    <string name="mockLocationMessage">Stop\nMocking\nMe</string>
+
+    <string name="btnTakePicture">Capture Image</string>
+    <string name="btnRecordVideo">Record Video</string>
+    <string name="or">(or)</string>
+    <string name="btnUploadToServer">Upload to Server</string>
+    <string name="btnCheckIn">Check In</string>
+    <string name="btnSend">KIRIM</string>
+
+    <!--    Permissions    -->
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
+
+    <string name="tt_time_gmt">%1$s</string>
+
+
+</resources>

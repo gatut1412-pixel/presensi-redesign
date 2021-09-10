@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AbsensiGPS_redesign_epesantren.iml" filepath="$PROJECT_DIR$/.idea/modules/AbsensiGPS_redesign_epesantren.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/AbsensiGPS_redesign_epesantren.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/AbsensiGPS_redesign_epesantren.app.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,296 @@
+<resources>
+
+    <!-- Base application theme. -->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+<!--    </style>-->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/green_pesantren_2</item>
+        <item name="colorPrimaryDark">@color/green_pesantren_2</item>
+        <item name="colorAccent">@color/darkRed</item>
+    </style>
+
+    <style name="Widget.App.RadioButton" parent="Widget.MaterialComponents.CompoundButton.RadioButton">
+        <item name="buttonTint">@color/green_pesantren_2</item>
+    </style>
+
+    <style name="AppTheme.Dark.Dialog" parent="Theme.AppCompat.Dialog">
+        <item name="colorAccent">@color/white</item>
+        <item name="android:textColorPrimary">@color/iron</item>
+        <item name="android:background">@color/green_pesantren_2</item>
+    </style>
+
+    <style name="pulang_datang_txt">
+        <item name="android:textSize">10sp</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="android:textColor">#61000000</item>
+    </style>
+
+    <style name="absen_after_txt">
+        <item name="android:textSize">19sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#99000000</item>
+    </style>
+
+    <style name="absen_sel">
+        <item name="android:textSize">19sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="absen_after_txt_2">
+        <item name="android:textSize">12sp</item>
+        <item name="android:letterSpacing">0.03</item>
+        <item name="android:textColor">#99000000</item>
+    </style>
+
+    <style name="pulang_datang_time">
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#99000000</item>
+    </style>
+
+    <style name="btm_txt_map">
+        <item name="android:textSize">14sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textColor">#DE000000</item>
+    </style>
+
+    <style name="page_title">
+        <item name="android:textSize">19sp</item>
+        <item name="android:letterSpacing">0.01</item>
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <style name="mytoast">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">#fff</item>
+        <item name="stTextSize">14sp</item>
+        <item name="stColorBackground">@color/green_pesantren_2</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stStrokeWidth">3dp</item>
+        <item name="stStrokeColor">#fff</item>
+        <item name="stLength">SHORT</item>
+        <item name="stGravity">top</item>
+        <item name="stRadius">5dp</item>
+    </style>
+
+    <style name="mytoast_danger">
+        <item name="stTextBold">true</item>
+        <item name="stTextColor">#fff</item>
+        <item name="stTextSize">14sp</item>
+        <item name="stColorBackground">@color/darkRed</item>
+        <item name="stSolidBackground">true</item>
+        <item name="stStrokeWidth">3dp</item>
+        <item name="stStrokeColor">#fff</item>
+        <item name="stLength">SHORT</item>
+        <item name="stGravity">top</item>
+        <item name="stRadius">5dp</item>
+    </style>
+
+    <style name="ponpes_nama">
+        <item name="android:textSize">19sp</item>
+        <item name="android:textColor">#DE000000</item>
+    </style>
+
+    <style name="AppTheme.Calendar" parent="Theme.AppCompat.Dialog">
+        <item name="android:textColorPrimary">@color/green_pesantren</item>
+        <item name="android:headerBackground">@color/green_pesantren</item>
+    </style>
+
+    <!-- Styles to be used for the exposed dropdown menu. -->
+<!--    <style name="Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu" parent="Theme.MaterialComponents.Light.NoActionBar">-->
+<!--        <item name="materialThemeOverlay">-->
+<!--            @style/Theme.MaterialComponents.Light.NoActionBar-->
+<!--        </item>-->
+<!--        <item name="endIconDrawable">@drawable/ic_baseline_arrow_drop_down_24</item>-->
+
+<!--    </style>-->
+
+    <style name="wib">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.03
+        </item>
+
+        <item name="android:textColor">
+            #61000000
+        </item>
+
+    </style>
+
+    <style name="ponpes_al_h">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="mulya_lukma">
+
+        <item name="android:textSize">
+            19sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="admin_pesan">
+
+        <item name="android:textSize">
+            12sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.03
+        </item>
+
+        <item name="android:textColor">
+            #FFFFFF
+        </item>
+
+    </style>
+
+    <style name="jum_at_18_j">
+
+        <item name="android:textSize">
+            19sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #DE000000
+        </item>
+
+    </style>
+
+    <style name="some_id">
+
+        <item name="android:textSize">
+            16sp
+        </item>
+
+        <item name="android:letterSpacing">
+            0.01
+        </item>
+
+        <item name="android:textColor">
+            #99000000
+        </item>
+
+    </style>
+
+    <style name="CustomCardViewStyle" parent="@style/Widget.MaterialComponents.CardView">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay_card_custom_corners</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay_card_custom_corners" parent="">
+        <!--        <item name="color">@color/black</item>-->
+
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">20dp</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <!--    //-->
+    <style name="CustomBottomSheetDialog" parent="@style/ThemeOverlay.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/CustomBottomSheet</item>
+    </style>
+
+    <style name="CustomBottomSheet" parent="Widget.MaterialComponents.BottomSheet">
+        <item name="shapeAppearanceOverlay">@style/CustomShapeAppearanceBottomSheetDialog</item>
+    </style>
+
+    <style name="CustomShapeAppearanceBottomSheetDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopRight">100dp</item>
+        <item name="cornerSizeTopLeft">100dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+    </style>
+
+    <!--<style name="DialogTheme" parent="Material.App.Dialog">-->
+        <!--<item name="di_cornerRadius">10dp</item>-->
+        <!--<item name="android:windowNoTitle">true</item>-->
+        <!--<item name="android:windowFullscreen">true</item>-->
+        <!--<item name="android:windowIsFloating">true</item>-->
+        <!--<item name="android:windowContentOverlay">@null</item>-->
+        <!--<item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>-->
+        <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+    <!--</style>-->
+
+    <!-- Circular Progress Dialog Theme -->
+    <!--<style name="CircularProgress" parent="Material.Drawable.CircularProgress">-->
+        <!--<item name="cpd_padding">26dp</item>-->
+         <!--<item name="cpd_strokeColor">@color/colorBlue</item>-->
+         <!--</style>-->
+
+    <!--<style name="Material.Drawable.CircularProgress">-->
+        <!--<item name="cpd_padding">0dp</item>-->
+        <!--<item name="cpd_initialAngle">0</item>-->
+        <!--<item name="cpd_maxSweepAngle">270</item>-->
+        <!--<item name="cpd_minSweepAngle">1</item>-->
+        <!--<item name="cpd_strokeSize">4dp</item>-->
+        <!--<item name="cpd_strokeColor">?attr/colorPrimary</item>-->
+        <!--<item name="cpd_strokeSecondaryColor">@android:color/transparent</item>-->
+        <!--<item name="cpd_reverse">false</item>-->
+        <!--<item name="cpd_rotateDuration">1000</item>-->
+        <!--<item name="cpd_transformDuration">600</item>-->
+        <!--<item name="cpd_keepDuration">200</item>-->
+        <!--<item name="cpd_transformInterpolator">@android:anim/decelerate_interpolator</item>-->
+        <!--<item name="pv_progressMode">indeterminate</item>-->
+        <!--<item name="cpd_inAnimDuration">0</item>-->
+        <!--<item name="cpd_outAnimDuration">@android:integer/config_mediumAnimTime</item>-->
+    <!--</style>-->
+
+    <!--<style name="Material.App.Dialog">-->
+        <!--<item name="android:layout_width">wrap_content</item>-->
+        <!--<item name="android:layout_height">wrap_content</item>-->
+        <!--<item name="android:windowIsFloating">false</item>-->
+        <!--<item name="di_dimAmount">0.5</item>-->
+        <!--<item name="di_backgroundColor">@color/background_floating_material_dark</item>-->
+        <!--<item name="di_elevation">4dp</item>-->
+        <!--<item name="di_maxElevation">4dp</item>-->
+        <!--<item name="di_cornerRadius">2dp</item>-->
+        <!--<item name="di_layoutDirection">locale</item>-->
+        <!--<item name="di_titleTextAppearance">@style/TextAppearance.AppCompat.Title</item>-->
+        <!--<item name="di_titleTextColor">@color/abc_primary_text_material_dark</item>-->
+        <!--<item name="di_actionRipple">@style/Material.Drawable.Ripple.Wave</item>-->
+        <!--<item name="di_actionTextAppearance">@style/TextAppearance.AppCompat.Button</item>-->
+        <!--<item name="di_actionTextColor">?attr/colorControlActivated</item>-->
+        <!--<item name="di_dividerColor">#1E999999</item>-->
+        <!--<item name="di_dividerHeight">1dp</item>-->
+        <!--<item name="di_cancelable">true</item>-->
+        <!--<item name="di_canceledOnTouchOutside">true</item>-->
+    <!--</style>-->
+
+</resources>

@@ -12,6 +12,11 @@
         android:title="Kehadiran"
         android:icon="@drawable/ic_icon_hadir"/>
 
+<!--    <item-->
+<!--        android:id="@+id/tahfidz_menu"-->
+<!--        android:title="Tahfidz"-->
+<!--        android:icon="@drawable/ic_baseline_book_24"/>-->
+
     <item
         android:id="@+id/profil_menu"
         android:title="Profil"

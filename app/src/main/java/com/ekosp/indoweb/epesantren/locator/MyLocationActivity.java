@@ -332,12 +332,37 @@ public class MyLocationActivity extends AppCompatActivity implements
 
     }
 
+//    public void check(View v) {
+//        if (isLocationModelEmpty())
+//            Toast.makeText(this, "Data real lokasi Anda tidak valid\nPastikan GPS anda aktif", Toast.LENGTH_SHORT).show();
+//        else if ((jarak < radius_lokasi) && validasiLokasi) {
+//            Toast.makeText(this, "Anda di dalam radius lokasi " + TYPE + "\nJarak anda: " + getReadableDistance(jarak), Toast.LENGTH_LONG).show();
+//
+//            Intent intent = new Intent(this, UploadImage.class);
+//            intent.putExtra(GlobalVar.PARAM_TYPE_ABSENSI, TYPE);
+//            intent.putExtra(GlobalVar.PARAM_LAST_LOCATION, locationModel);
+//            startActivity(intent);
+//            finish();
+//            overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+//        } else {
+//            Toast.makeText(this, "Anda masih di luar radius " + TYPE + "\nJarak absen anda: " + getReadableDistance(jarak), Toast.LENGTH_LONG).show();
+//        }
+//    }
+
     public void check(View v) {
         if (isLocationModelEmpty())
             Toast.makeText(this, "Data real lokasi Anda tidak valid\nPastikan GPS anda aktif", Toast.LENGTH_SHORT).show();
-        else if ((jarak < radius_lokasi) || !validasiLokasi) {
-//        else if ((jarak != radius_lokasi) || !validasiLokasi) {
+        else if (jarak < radius_lokasi)  {
             Toast.makeText(this, "Anda di dalam radius lokasi " + TYPE + "\nJarak anda: " + getReadableDistance(jarak), Toast.LENGTH_LONG).show();
+
+            Intent intent = new Intent(this, UploadImage.class);
+            intent.putExtra(GlobalVar.PARAM_TYPE_ABSENSI, TYPE);
+            intent.putExtra(GlobalVar.PARAM_LAST_LOCATION, locationModel);
+            startActivity(intent);
+            finish();
+            overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+        } else if (!validasiLokasi) {
+            Toast.makeText(this, "Presensi Anda Unlock " + TYPE + "\nJarak anda: " + getReadableDistance(jarak), Toast.LENGTH_LONG).show();
 
             Intent intent = new Intent(this, UploadImage.class);
             intent.putExtra(GlobalVar.PARAM_TYPE_ABSENSI, TYPE);
@@ -366,6 +391,12 @@ public class MyLocationActivity extends AppCompatActivity implements
 
         radius_lokasi = Integer.valueOf(dataUser.getJarak_radius().equals("") ? "0" : dataUser.getJarak_radius());
         if (dataUser.getValidasi().equalsIgnoreCase("y")) {
+            validasiLokasi = true;
+        } else {
+            validasiLokasi = false;
+        }
+
+        if (dataUser.getValidasi().equalsIgnoreCase("LOCK")) {
             validasiLokasi = true;
         } else {
             validasiLokasi = false;

@@ -95,14 +95,14 @@
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="25dp"
                     android:id="@+id/input_tgl_awal"
                     android:visibility="invisible"
                     android:text=""/>
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="25dp"
                     android:id="@+id/input_tgl_akhir"
                     android:visibility="invisible"
                     android:text=""/>
@@ -137,12 +137,62 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <ImageView
+<!--            <ImageView-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:id="@+id/btn_upload"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:src="@drawable/ic_a_button_outlined_fullwidth_icon_leading"-->
+<!--                android:layout_height="48dp" />-->
+
+            <Button
                 android:layout_marginTop="10dp"
-                android:id="@+id/btn_upload"
                 android:layout_width="match_parent"
-                android:src="@drawable/ic_a_button_outlined_fullwidth_icon_leading"
-                android:layout_height="48dp" />
+                android:layout_height="48dp"
+                android:id="@+id/btn_select"
+                android:gravity="center"
+                android:text="Pilih Image"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold">
+            </Button>
+
+<!--            <TextView-->
+<!--                android:id="@+id/selectedPdf"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:padding="20dp"-->
+<!--                android:text="Click To Pick PDF From Storage"-->
+<!--                android:textColor="#0798DA"-->
+<!--                android:textSize="12dp"-->
+<!--                android:textStyle="bold"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/textViewFilePath"-->
+<!--                android:textSize="15sp"-->
+<!--                android:textAlignment="center"/>-->
+
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/tvpath"-->
+<!--                android:textSize="18sp"-->
+<!--                android:textAlignment="center"-->
+<!--                android:visibility="invisible"/>-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/IVPreviewImage"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="100dp"-->
+<!--                android:layout_below="@id/btn_selectpdf"/>-->
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:id="@+id/ImageView">
+
+            </ImageView>
 
             <Button
                 android:layout_marginTop="10dp"

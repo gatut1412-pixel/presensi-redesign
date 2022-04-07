@@ -96,7 +96,7 @@ public class LoginActivity extends Activity {
 
         Glide.with(this).load("http://"+mDataPonpes.getLogo()+"").into(img);
 
-        _welcomeText.setText("Pondok Pesantren "+mDataPonpes.getNamaPonpes());
+        _welcomeText.setText(mDataPonpes.getNamaPonpes());
 
         try {
             PackageInfo pInfo = this.getPackageManager().getPackageInfo(getPackageName(), 0);

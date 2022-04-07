@@ -2,13 +2,13 @@ package com.ekosp.indoweb.epesantren.ijin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.location.Location;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -25,6 +25,7 @@ import com.ekosp.indoweb.epesantren.helper.SessionManager;
 import com.ekosp.indoweb.epesantren.model.DataIjin;
 import com.ekosp.indoweb.epesantren.model.DataPonpes;
 import com.ekosp.indoweb.epesantren.model.LocationModel;
+import com.ekosp.indoweb.epesantren.imageutils.*;
 import com.google.android.material.datepicker.MaterialDatePicker;
 import com.google.android.material.datepicker.MaterialPickerOnPositiveButtonClickListener;
 import com.google.gson.annotations.Expose;
@@ -32,17 +33,20 @@ import com.google.gson.annotations.SerializedName;
 import com.karan.churi.PermissionManager.PermissionManager;
 import com.squareup.okhttp.MediaType;
 
+import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import io.github.muddz.styleabletoast.StyleableToast;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class IjinActivity extends AppCompatActivity {
+public class IjinActivity extends AppCompatActivity implements ImageUtils.ImageAttachmentListener {
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -60,6 +64,10 @@ public class IjinActivity extends AppCompatActivity {
 
     private String userName;
     private String kodess;
+    private Button buttonPilihGambar;
+    private ImageView imageViewFoto;
+    private ImageUtils imageutils;
+    private File fileImage;
 
     @BindView(R.id.input_tgl)
     EditText tgl;
@@ -92,6 +100,15 @@ public class IjinActivity extends AppCompatActivity {
         setContentView(R.layout.activity_ijin);
 
         ButterKnife.bind(this);
+
+        imageutils = new ImageUtils(this);
+
+        buttonPilihGambar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                imageutils.imagepicker(1);
+            }
+        });
 
         permission = new PermissionManager() {};
         permission.checkAndRequestPermissions(this);
@@ -175,6 +192,7 @@ public class IjinActivity extends AppCompatActivity {
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }
 
+
     @Override
     public String toString() {
         return "IjinActivity{" +
@@ -182,7 +200,7 @@ public class IjinActivity extends AppCompatActivity {
     }
 
     public void simpan() {
-        Log.d(TAG, "Login");
+        Log.d(TAG, "Simpan");
 
         submit.setEnabled(false);
         progressDialog = new ProgressDialog(IjinActivity.this,
@@ -192,7 +210,7 @@ public class IjinActivity extends AppCompatActivity {
         progressDialog.show();
 
         if (!validate()) {
-            onSimpanFailed("Tambah Presensi Ijin Gagal\nSilahkan Periksa Data Anda Terlebih Dahulu");
+            onSimpanFailed("Tambah Presensi Ijin Gagal. Silahkan Periksa Data Anda Terlebih Dahulu");
             return;
         }
 
@@ -226,6 +244,7 @@ public class IjinActivity extends AppCompatActivity {
         String tgl_awal_ = tgl_awal.getText().toString();
         String tgl_akhir_ = tgl_akhir.getText().toString();
         String keterangan_ = keterangan.getText().toString();
+
 
         apiService = ApiClient.getClient().create(ApiInterface.class);
         Call<DataIjin> call = apiService.submitIjin(kodes,uname,jenis_,tgl_awal_,tgl_akhir_,keterangan_);
@@ -313,6 +332,8 @@ public class IjinActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         permission.checkResult(requestCode, permissions, grantResults);
+
+
 
     }
 

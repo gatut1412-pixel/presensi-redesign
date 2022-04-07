@@ -14,6 +14,10 @@
         app:destination="@id/laporanFragment" />
 
     <action
+        android:id="@+id/open_tahfidz_page"
+        app:destination="@id/tahfidzFragment" />
+
+    <action
         android:id="@+id/open_profile_page"
         app:destination="@id/profileFragment" />
 
@@ -28,6 +32,12 @@
         android:name="com.ekosp.indoweb.epesantren.fragment.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/tahfidzFragment"
+        android:name="com.ekosp.indoweb.epesantren.tahfidz.TahfidzActivity_k"
+        android:label="fragment_tahfidz"
+        tools:layout="@layout/fragment_tahfidz" />
 
     <fragment
         android:id="@+id/laporanFragment"

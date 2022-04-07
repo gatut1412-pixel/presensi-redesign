@@ -24,6 +24,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".uploadingpdf.UploadMainActivity"></activity>
+        <activity android:name=".pdfactivity.PdfActivity" />
+        <activity android:name=".uploadpdfaditya.UploadActivity" />
+        <activity android:name=".alarm.TimePickerFragment" />
+        <activity android:name=".alarm.DatePickerFragment" />
+        <activity android:name=".alarm.AlarmActivity" />
         <activity
             android:name=".laporan.KehadiranTahunanActivity"
             android:exported="true" />
@@ -54,17 +60,17 @@
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
-            android:name="com.ekosp.indoweb.epesantren.AfterAbsen"
+            android:name=".AfterAbsen"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".LoginPonpesActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize" />
         <activity android:name=".laporan.LaporanWeb" />
+        <activity android:name=".tahfidz.TahfidzActivity_j" />
+        <activity android:name=".tahfidz.TahfidzActivity_k" />
         <activity android:name=".locator.MyLocationActivity" />
         <activity
             android:name=".ijin.IjinActivity"

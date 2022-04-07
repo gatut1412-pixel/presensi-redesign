@@ -47,6 +47,10 @@ public class DataUser {
     @Expose
     private String photo;
 
+//    @SerializedName("profil")
+//    @Expose
+//    private String profil;
+
     @SerializedName("max_datang")
     @Expose
     private String max_datang;
@@ -184,6 +188,14 @@ public class DataUser {
         this.photo = photo;
     }
 
+//    public String getProfil() {
+//        return profil;
+//    }
+//
+//    public void setProfil(String profil) {
+//        this.profil = profil;
+//    }
+
     public String getPhone() {
         return phone;
     }
@@ -199,6 +211,7 @@ public class DataUser {
     public void setMessage(String message) {
         this.message = message;
     }
+
     public String getJabatan() {
         return jabatan;
     }

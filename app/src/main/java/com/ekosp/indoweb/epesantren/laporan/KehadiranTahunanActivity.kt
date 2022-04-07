@@ -31,9 +31,10 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class KehadiranTahunanActivity : AppCompatActivity() {
-    private lateinit  var session: SessionManager
-    private lateinit var dataUser: DataUser
-    private lateinit var dataPonpes: DataPonpes
+
+//    private lateinit var session: SessionManager
+//    private lateinit var dataUser: DataUser
+//    private lateinit var dataPonpes: DataPonpes
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,26 +44,21 @@ class KehadiranTahunanActivity : AppCompatActivity() {
     }
 
     private fun getDataLaporanTahunan(){
-        val yearSelect = intent.getStringExtra("yearsSelect")
-        val yearNow = Calendar.getInstance().get(Calendar.YEAR)
 
-        tahun.text = yearNow.toString()
 //        session = SessionManager(requireContext())
-        dataUser = session.getSessionDataUser()
-        dataPonpes = session.getSessionDataPonpes()
+//        dataUser = session.getSessionDataUser()
+//        dataPonpes = session.getSessionDataPonpes()
 
-        val tahun: String = SimpleDateFormat("yyyy", Locale.getDefault()).format(Date())
-        val kode_sekolah: String = dataPonpes.getKodes()
-        val id_pegawai: String = dataUser.getNip()
-
+//        val tahun = intent.getStringExtra("yearsSelect")
+//        val kodesekolah: String = dataPonpes.getKodes()
+//        val idpegawai: String = dataUser.getNip()
 
         val apiService = ApiClient.getClient().create(ApiInterface::class.java)
-        val call = apiService.getDataLaporan(
-                kode_sekolah,
-                id_pegawai,
+        val call = apiService.getDataLaporantahun(
+                "2203007",
+                "111",
                 "TAHUNAN",
-                tahun,
-                "",
+                "2022",
         )
 
         call.enqueue(object : Callback<DataLaporan?> {

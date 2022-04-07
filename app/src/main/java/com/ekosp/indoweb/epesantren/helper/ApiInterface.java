@@ -9,7 +9,6 @@ import com.ekosp.indoweb.epesantren.model.data_laporan.DataLaporan;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 /**
@@ -35,6 +34,16 @@ public interface ApiInterface {
             @Query("tgl_akhir") String tgl_akhir_,
             @Query("keterangan") String keterangan_);
 
+    @GET("rest-api/submitIjin_coba.php")
+    Call<DataIjin> submitIjincoba(
+            @Query("kode_sekolah") String kodes,
+            @Query("id_pegawai") String uname,
+            @Query("jenis") String jenis_,
+            @Query("tgl_awal") String tgl_awal_,
+            @Query("tgl_akhir") String tgl_akhir_,
+            @Query("keterangan") String keterangan_,
+            @Query("pdf") String pdf_);
+
     @GET("rest-api/get_ponpes.php")
     Call<DataPonpes> checkPonpes(
             @Query("kode_sekolah") String kodes);
@@ -49,5 +58,19 @@ public interface ApiInterface {
             @Query("type") String type,
             @Query("tahun") String tahun,
             @Query("bulan") String bulan);
+
+    @GET("rest-api/get_data_laporantahun.php")
+    Call<DataLaporan> getDataLaporantahun(
+            @Query("kode_sekolah") String kode_sekolah,
+            @Query("id_pegawai") String id_pegawai,
+            @Query("type") String type,
+            @Query("tahun") String tahun);
+
+//    @POST("insert.php")
+//    Call<ResponsTahfidz> sendTahfidz(@Field("jumlahhafalan") String jumlahhafalan,
+//                                   @Field("keteranganhafalan") String keteranganhafalan,
+//                                   @Field("murojaah") String murojaah,
+//                                   @Field("murojaahhafalanbaru") String murojaahhafalanbaru);
+
 
 }

@@ -7,18 +7,15 @@ import android.os.Bundle
 import android.view.View
 import android.view.WindowManager
 import android.widget.*
-import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ekosp.indoweb.epesantren.R
 import com.ekosp.indoweb.epesantren.adapter.ListRekapKehadiranAdapter
-import com.ekosp.indoweb.epesantren.helper.ApiClient
-import com.ekosp.indoweb.epesantren.helper.ApiInterface
-import com.ekosp.indoweb.epesantren.helper.SessionManager
-import com.ekosp.indoweb.epesantren.helper.parseDateToddMMyyyy
+import com.ekosp.indoweb.epesantren.helper.*
 import com.ekosp.indoweb.epesantren.laporan.KehadiranTahunanActivity
+import com.ekosp.indoweb.epesantren.laporan.LaporanWeb
 import com.ekosp.indoweb.epesantren.model.DataPonpes
 import com.ekosp.indoweb.epesantren.model.DataUser
 import com.ekosp.indoweb.epesantren.model.data_laporan.DataLaporan
@@ -33,22 +30,21 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.text.SimpleDateFormat
 import java.util.*
+import java.util.Calendar;
 
 
-class LaporanFragment : Fragment(R.layout.fragment_laporan),
-        ListRekapKehadiranAdapter.ClickListener, AdapterView.OnItemSelectedListener{
+class LaporanFragment : Fragment(R.layout.fragment_laporan), ListRekapKehadiranAdapter.ClickListener, AdapterView.OnItemSelectedListener{
 
     private var dataKehadiran: MutableList<Rekap>? = null
     private lateinit var detailKehadiranTahun: DataLaporan
     private lateinit var adapter: ListRekapKehadiranAdapter
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<MaterialCardView>
 
-    private lateinit  var session: SessionManager
-    private lateinit var dataUser: DataUser
-    private lateinit var dataPonpes: DataPonpes
+    private lateinit var session: SessionManager
+    private lateinit var User: DataUser
+    private lateinit var Ponpes: DataPonpes
 
     var sheetBehavior: BottomSheetBehavior<*>? = null
-
     var bottom_sheet: BottomSheetDialog? = null
     var selectMonth = ""
     var yearsSelect = ""
@@ -97,7 +93,6 @@ class LaporanFragment : Fragment(R.layout.fragment_laporan),
 //            i.putExtra("dataKehadiranTahun", detailKehadiranTahun)
             i.putExtra("yearsSelect", yearsSelect)
             activity?.startActivity(i)
-
         }
     }
 
@@ -107,21 +102,21 @@ class LaporanFragment : Fragment(R.layout.fragment_laporan),
         rv_kehadiran.layoutManager = LinearLayoutManager(requireContext())
 
         session = SessionManager(requireContext())
-        dataUser = session.getSessionDataUser()
-        dataPonpes = session.getSessionDataPonpes()
+        User = session.getSessionDataUser()
+        Ponpes = session.getSessionDataPonpes()
 
-        val kode_sekolah: String = dataPonpes.getKodes()
-        val id_pegawai: String = dataUser.getNip()
-        val tahun: String = SimpleDateFormat("yyyy", Locale.getDefault()).format(Date())
-        val bulan: String = SimpleDateFormat("MM", Locale.getDefault()).format(Date())
+        val kode_sekolah: String = Ponpes.getKodes()
+        val id_pegawai: String = User.getNip()
+        val tahun: String = yearsSelect
+        val bulan: String = selectMonth
 
         val apiService = ApiClient.getClient().create(ApiInterface::class.java)
         val call = apiService.getDataLaporan(
-                kode_sekolah,
-                id_pegawai,
+                "2203007",
+                "111",
                 "BULANAN",
-                tahun,
-                bulan,
+                "2022",
+                "04"
         )
 
         call.enqueue(object : Callback<DataLaporan?> {

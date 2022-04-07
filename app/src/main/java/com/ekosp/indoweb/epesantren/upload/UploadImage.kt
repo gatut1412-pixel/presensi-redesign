@@ -48,8 +48,8 @@ class UploadImage : AppCompatActivity() {
     private var TYPE: String? = null
     private var compressedImage: File? = null
     private var locationModel: LocationModel? = null
-    private var dataPonpes: DataPonpes? =null
-    private lateinit var mRunnable: Runnable
+//    private var dataPonpes: DataPonpes? =null
+//    private lateinit var mRunnable: Runnable
     private lateinit var countDownTimer: CountDownTimer
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -185,9 +185,17 @@ class UploadImage : AppCompatActivity() {
             var responseString: String? = null
             val httpclient: HttpClient = DefaultHttpClient()
             var domains= datPonpes?.get(SessionManager.KEY_DOMAIN_PONPES).toString()
-            val httppost = if(domains=="demo") HttpPost(ApiClient.FILE_UPLOAD_URL_DEMO) else HttpPost(
-                ApiClient.FILE_UPLOAD_URL
-            )
+//            val httppost = if(domains=="demo") HttpPost(ApiClient.FILE_UPLOAD_URL_DEMO) else HttpPost(
+//                ApiClient.FILE_UPLOAD_URL
+//            )
+            val httppost = if(domains=="demo") HttpPost(ApiClient.FILE_UPLOAD_URL_DEMO)
+            else if (domains=="ibnumasud") HttpPost(ApiClient.FILE_UPLOAD_URL_WITA)
+            else if (domains=="annursulsel") HttpPost(ApiClient.FILE_UPLOAD_URL_WITA)
+            else if (domains=="ibrahim") HttpPost(ApiClient.FILE_UPLOAD_URL_WITA)
+            else if (domains=="sdiarrahmahpangkajene") HttpPost(ApiClient.FILE_UPLOAD_URL_WITA)
+            else if (domains=="appsma") HttpPost(ApiClient.FILE_UPLOAD_URL_ALRIFAIE)
+            else if (domains=="akademik") HttpPost(ApiClient.FILE_UPLOAD_URL_TRENDI)
+            else HttpPost(ApiClient.FILE_UPLOAD_URL)
 
             try {
                 val entity = AndroidMultiPartEntity { num: Long -> publishProgress((num / totalSize.toFloat() * 100).toInt()) }
@@ -330,7 +338,7 @@ class UploadImage : AppCompatActivity() {
     }
 
     private fun startCountdown() {
-        val durasi = 5 * 60 * 1000
+        val durasi = 2 * 60 * 1000
         countDownTimer = object : CountDownTimer(durasi.toLong(), 1000) {
             override fun onTick(millisUntilFinished: Long) {
                 val milis = String.format(

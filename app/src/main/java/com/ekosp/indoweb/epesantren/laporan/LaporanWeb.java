@@ -18,7 +18,6 @@ import com.ekosp.indoweb.epesantren.helper.GlobalVar;
 public class LaporanWeb extends Activity {
 
     private WebView mWebView;
-  //  String newUA = "indoincome";
     private String userName;
     private String kodess;
 

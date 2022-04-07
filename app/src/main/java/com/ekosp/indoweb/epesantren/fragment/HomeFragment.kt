@@ -7,6 +7,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
 import com.ekosp.indoweb.epesantren.R
+import com.ekosp.indoweb.epesantren.alarm.AlarmActivity
 import com.ekosp.indoweb.epesantren.helper.ApiClient
 import com.ekosp.indoweb.epesantren.helper.ApiInterface
 import com.ekosp.indoweb.epesantren.helper.GlobalVar
@@ -16,6 +17,7 @@ import com.ekosp.indoweb.epesantren.laporan.LaporanWeb
 import com.ekosp.indoweb.epesantren.model.DataPonpes
 import com.ekosp.indoweb.epesantren.model.DataUser
 import kotlinx.android.synthetic.main.fragment_home.*
+import kotlinx.android.synthetic.main.fragment_laporan.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,16 +26,20 @@ import java.util.*
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
 
-    private lateinit  var session: SessionManager
+    private lateinit var session: SessionManager
     private lateinit var dataUser: DataUser
     private lateinit var dataPonpes: DataPonpes
     var numberOfSeconds = 1
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         setListener()
+        setLaporanweb()
         setUI()
+//        setAlarm()
+
     }
 
     override fun onResume() {
@@ -53,6 +59,7 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         val kodes: String = dataPonpes.getKodes()
         val uname: String = dataUser.getNip()
         val pass: String = "onlogin"
+        var yearsSelect = ""
 
 
         val apiService = ApiClient.getClient().create(ApiInterface::class.java)
@@ -83,6 +90,33 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         info_jabatan.setText(dataUser.getJabatan())
 
     }
+
+    private fun setLaporanweb() {
+        laporanweb.setOnClickListener {
+            val intent = Intent(requireActivity(), LaporanWeb::class.java)
+            intent.putExtra(GlobalVar.PARAM_DATA_USER, dataUser.username)
+            intent.putExtra(GlobalVar.PARAM_KODES_USER, dataPonpes.kodes)
+            startActivity(intent)
+        }
+    }
+
+//    private fun setAlarm() {
+//        setelpengingat.setOnClickListener {
+//            val go = Intent(requireActivity(), AlarmActivity::class.java)
+//            startActivity(go)
+//        }
+//    }
+
+//    private fun setTahfidz() {
+//        tahfidz.setOnClickListener {
+//            activity?.let {
+//                val intent = Intent(it, TahfidzActivity_k::class.java)
+//                intent.putExtra(GlobalVar.PARAM_DATA_USER, dataUser.username)
+//                intent.putExtra(GlobalVar.PARAM_KODES_USER, dataPonpes.kodes)
+//                it.startActivity(intent)
+//            }
+//        }
+//    }
 
     private fun setListener() {
 

@@ -60,17 +60,7 @@ class MainActivity : AppCompatActivity() {
     var numberOfSeconds = 1
     private val TAG = MainActivity::class.java.simpleName
 
-    //    @BindView(R.id.info_nama_ponpes)
-    //    TextView infoNamaPonpes;
-    //
-    //    @BindView(R.id.info_nama_user)
-    //    TextView infoNamaUser;
-    //
-    //    @BindView(R.id.info_jabatan)
-    //    TextView infoJabatan;
-    //
-    //    @BindView(R.id.hari_tanggal)
-    //    TextView hariTanggal;
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home_page)
@@ -104,6 +94,11 @@ class MainActivity : AppCompatActivity() {
                     findNavController(R.id.nav_host_fragment).navigate(R.id.open_laporan_page)
                     return@setOnNavigationItemSelectedListener true
                 }
+
+//                R.id.tahfidz_menu-> {
+//                    findNavController(R.id.nav_host_fragment).navigate(R.id.open_tahfidz_page)
+//                    return@setOnNavigationItemSelectedListener true
+//                }
 
                 R.id.profil_menu-> {
                     findNavController(R.id.nav_host_fragment).navigate(R.id.open_profile_page)
